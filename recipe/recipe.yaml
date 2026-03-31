@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.2.0"
+  version: "0.3.0"
 
 package:
   name: conda-workspaces
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/c/conda-workspaces/conda_workspaces-${{ version }}.tar.gz
-  sha256: c7c762ecf0429ac404035bf410c3a9145deb57c97dbbf65c604f53623981f79b
+  sha256: ff64e099babe0760fee84612ed9e20cba46ee6cfe1310a504dcf9f87e94dd4d9
 
 build:
   number: 0
@@ -31,10 +31,11 @@ requirements:
     - conda >=24.7
     - conda-lockfiles >=0.1
     - conda-spawn >=0.0.5
+    - jinja2 >=3.0
+    - packaging >=21.0
+    - platformdirs >=3.0
     - rich >=13.0
     - tomlkit >=0.13
-    - platformdirs >=3.0
-    - jinja2 >=3.0
   run_constraints:
     - conda-pypi >=0.5.0
     - conda-rattler-solver >=0.0.6
