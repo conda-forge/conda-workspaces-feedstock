@@ -21,6 +21,7 @@ or pyproject.toml) and let conda handle the solving and installation.
 Optional dependencies for additional features:
 - conda-pypi: PyPI dependency resolution and installation
 - conda-rattler-solver: rattler solver backend (required for PyPI deps)
+- conda-sboms: CycloneDX workspace SBOM export
 
 Current build status
 ====================
@@ -53,31 +54,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `conda-workspaces` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install conda-workspaces
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install conda-workspaces
 ```
 
-It is possible to list all of the versions of `conda-workspaces` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add conda-workspaces
+# for installing globally
+pixi global install conda-workspaces
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `conda-workspaces` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search conda-workspaces --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search conda-workspaces --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search conda-workspaces --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -89,6 +132,8 @@ mamba repoquery whoneeds conda-workspaces --channel conda-forge
 # List dependencies of `conda-workspaces`:
 mamba repoquery depends conda-workspaces --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
